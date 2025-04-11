@@ -2,6 +2,9 @@
   "muted": {
     "sounds": [ "extrasounds:muted" ]
   },
+  "screenshot": {
+    "sounds": [ "extrasounds:screenshot" ]
+  },
   "item.pickup.minecraft.air": {
     "replace": true,
     "sounds": [
@@ -663,6 +666,14 @@
     "sounds": [
       {
         "name": "extrasounds:keyboard.type",
+        "type": "event"
+      }
+    ]
+  },
+  "keyboard.screenshot": {
+    "sounds": [
+      {
+        "name": "extrasounds:screenshot",
         "type": "event"
       }
     ]

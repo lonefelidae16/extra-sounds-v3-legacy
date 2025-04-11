@@ -37,6 +37,7 @@ public final class Sounds {
     public static final VersionedSoundEventWrapper KEYBOARD_ERASE = ExtraSounds.createEvent("keyboard.erase");
     public static final VersionedSoundEventWrapper KEYBOARD_CUT = ExtraSounds.createEvent("keyboard.cut");
     public static final VersionedSoundEventWrapper KEYBOARD_PASTE = ExtraSounds.createEvent("keyboard.paste");
+    public static final VersionedSoundEventWrapper SCREENSHOT = ExtraSounds.createEvent("keyboard.screenshot");
 
     public static final class Actions {
         private Actions() {

@@ -14,6 +14,8 @@ public final class Mixers implements CategoryLoader {
     public static SoundCategory CHAT;
     @Register
     public static SoundCategory CHAT_MENTION;
+    @Register(toggle = true)
+    public static SoundCategory SCREENSHOT;
     @Register
     public static SoundCategory EFFECTS;
     @Register

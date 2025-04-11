@@ -9,6 +9,7 @@ public enum SoundType {
     HOTBAR(1f, Mixers.HOTBAR, "item.select"),
     CHAT(1f, Mixers.CHAT, "ui.chat"),
     CHAT_MENTION(1f, Mixers.CHAT_MENTION, "ui.chat"),
+    SCREENSHOT(1f, Mixers.SCREENSHOT, "ui.chat"),
     EFFECTS(1f, Mixers.EFFECTS, "effects"),
     TYPING(1f, Mixers.TYPING, "ui.typing"),
     ITEM_INTR(1f, Mixers.ITEM_INTR, "item.interact"),

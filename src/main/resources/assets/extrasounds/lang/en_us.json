@@ -4,6 +4,7 @@
   "soundCategory.extrasounds_logics$hotbar": "Hotbar",
   "soundCategory.extrasounds_logics$chat": "Chat Messages",
   "soundCategory.extrasounds_logics$chat_mention": "Chat Mention",
+  "soundCategory.extrasounds_logics$screenshot": "Screenshot",
   "soundCategory.extrasounds_logics$effects": "Effects/Potions",
   "soundCategory.extrasounds_logics$typing": "Typing",
   "soundCategory.extrasounds_logics$item_intr": "Item Interactions",
