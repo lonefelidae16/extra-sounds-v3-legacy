@@ -77,7 +77,7 @@ public abstract class AbstractCreativeInventoryHandler {
             }
 
             if (bOnCreativeTab && !bOnHotbar) {
-                if (ExtraSounds.canItemsCombine(state.getSlotStack(), state.cursorStack) && !state.isRMB) {
+                if (ExtraSounds.MAIN.canItemsCombine(state.getSlotStack(), state.cursorStack) && !state.isRMB) {
                     // Left Mouse Clicked on the same slot in CreativeInventory tab except Hotbar.
                     ExtraSounds.MANAGER.playSound(state.cursorStack.getItem(), SoundType.PICKUP);
                     return;

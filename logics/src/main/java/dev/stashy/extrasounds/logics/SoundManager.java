@@ -133,7 +133,7 @@ public final class SoundManager {
                  * hasCursor == false, hasSlot == true
                  *  --> PICKUP
                  */
-                if (!hasSlot || hasCursor && ExtraSounds.canItemsCombine(slotStack, cursorStack)) {
+                if (!hasSlot || hasCursor && ExtraSounds.MAIN.canItemsCombine(slotStack, cursorStack)) {
                     this.playSound(cursorStack.getItem(), SoundType.PLACE);
                 } else {
                     this.playSound(slotStack.getItem(), SoundType.PICKUP);
@@ -298,7 +298,7 @@ public final class SoundManager {
     }
 
     public VersionedSoundEventWrapper getSoundByItem(Item item, SoundType type) {
-        var itemId = ExtraSounds.getItemId(item);
+        var itemId = ExtraSounds.MAIN.getItemId(item);
         Identifier id = ExtraSounds.getClickId(itemId, type);
         VersionedSoundEventWrapper sound = SoundPackLoader.CUSTOM_SOUND_EVENT.getOrDefault(id, null);
         if (sound == null) {

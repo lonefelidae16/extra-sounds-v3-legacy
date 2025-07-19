@@ -6,10 +6,7 @@ import dev.stashy.extrasounds.logics.runtime.VersionedSoundEventWrapper;
 import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import me.lonefelidae16.groominglib.api.PrefixableMessageFactory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.IndexedIterable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,17 +67,5 @@ public final class ExtraSounds {
 
     public static Identifier generateIdentifier(String namespace, String path) {
         return MAIN.generateIdentifier(namespace, path);
-    }
-
-    public static Identifier getItemId(Item item) {
-        return MAIN.getItemId(item);
-    }
-
-    public static IndexedIterable<Item> getItemRegistry() {
-        return MAIN.getItemRegistry();
-    }
-
-    public static boolean canItemsCombine(ItemStack stack1, ItemStack stack2) {
-        return MAIN.canItemsCombine(stack1, stack2);
     }
 }

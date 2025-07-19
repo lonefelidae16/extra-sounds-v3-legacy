@@ -93,7 +93,7 @@ public final class InventoryClickState {
             return false;
         }
 
-        return !this.slot.canInsert(this.cursorStack) && !ExtraSounds.canItemsCombine(this.slot.getStack(), this.cursorStack);
+        return !this.slot.canInsert(this.cursorStack) && !ExtraSounds.MAIN.canItemsCombine(this.slot.getStack(), this.cursorStack);
     }
 
     public boolean isOnCreativeTab() {

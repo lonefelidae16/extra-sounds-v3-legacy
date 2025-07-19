@@ -34,7 +34,7 @@ public abstract class BaseVanillaGenerator {
     protected abstract SoundGenerator generate();
 
     protected String getItemIdPath(Item item) {
-        return ExtraSounds.getItemId(item).getPath();
+        return ExtraSounds.MAIN.getItemId(item).getPath();
     }
 
     private boolean isBrickItem(Item item) {

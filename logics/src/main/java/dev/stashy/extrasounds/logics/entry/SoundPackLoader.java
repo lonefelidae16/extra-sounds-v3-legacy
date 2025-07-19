@@ -165,8 +165,8 @@ public final class SoundPackLoader {
             }
         }
 
-        for (Item item : ExtraSounds.getItemRegistry()) {
-            final Identifier itemId = ExtraSounds.getItemId(item);
+        for (Item item : ExtraSounds.MAIN.getItemRegistry()) {
+            final Identifier itemId = ExtraSounds.MAIN.getItemId(item);
             final SoundDefinition definition;
             if (soundGenerator.containsKey(itemId.getNamespace())) {
                 definition = soundGenerator.get(itemId.getNamespace()).itemSoundGenerator.apply(item);
@@ -239,7 +239,7 @@ public final class SoundPackLoader {
          * @return A new instance of {@link CacheInfo}.
          */
         public static CacheInfo of(String[] info) {
-            return new CacheInfo(CACHE_VERSION, ExtraSounds.getItemRegistry().size(), info);
+            return new CacheInfo(CACHE_VERSION, ExtraSounds.MAIN.getItemRegistry().size(), info);
         }
 
         /**
