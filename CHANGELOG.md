@@ -9,7 +9,7 @@
 
 <small>_Caught bugs and known issues are written._</small>
 
-## [3.0.0+1.21.7-build.1] - 2025-07-24
+## [3.0.0+1.21.8-build.2] - 2025-07-24
 ### ✨ Added
 
 * Supports 1.21.6 - 1.21.8.
