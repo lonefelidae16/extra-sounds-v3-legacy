@@ -33,7 +33,7 @@ and works with the following Minecraft versions:
 * Minecraft 1.20 family
   - 1.20 - 1.20.6
 * Minecraft 1.21 family
-  - 1.21 - 1.21.5
+  - 1.21 - 1.21.8
 
 If the version you want isn’t available, [you can request a new backward compatibility](https://github.com/lonefelidae16/extra-sounds/issues/new?assignees=&labels=backward,enhancement&projects=&template=backward.yml).
 
@@ -51,6 +51,7 @@ When you find a bug or compatibility problem, [you can raise an issue](https://g
   - Trading with villagers
 * Chat message sound
 * Chat @mention sound
+* Screenshot sound
 * Keyboard typing sound
 * Status effect/potion sounds
 * Item interaction sounds on Hotbar
@@ -97,7 +98,7 @@ ExtraSounds a full client mod and has the following problems:
 * Since it’s necessary to communicate with the server to obtain the results,
   a sound is played regardless of whether your action succeeds or fails.
   - e.g.) When both Chest and PlayerInventory are full and trying to move the stack with
-    <kbd>Shift</kbd> + Click. The stack will not be moved, but the sound will be played.
+    <kbd>Shift</kbd> + LMB. The stack will not be moved, but the sound will be played.
 
 ## 🛠 Development
 To build this project yourself, [follow the guide on the Wiki](https://github.com/lonefelidae16/extra-sounds/wiki).

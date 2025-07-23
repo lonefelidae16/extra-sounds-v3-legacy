@@ -9,6 +9,27 @@
 
 <small>_Caught bugs and known issues are written._</small>
 
+## [3.0.0+1.21.7-build.1] - 2025-07-24
+### ✨ Added
+
+* Supports 1.21.6 - 1.21.8.
+
+### 🔧 Fixed
+
+* Picking item sound (default Mouse Middle Button).
+* Select Tab sound in Creative Inventory.
+
+### 👷 Technical
+
+* Some files were refactored.
+* Dependency updates:
+  - yarn mappings 1.21.8+build.1
+  - fabric api 0.129.0+1.21.8
+  - fabric loader 0.16.14
+  - fabric loom 1.11
+  - SoundCategories
+  - Gradle 8.14.3
+
 ## [3.0.0+1.21.5-build.1] - 2025-04-11
 ### ✨ Added
 
@@ -225,7 +246,7 @@
   - Supports deletion sound if the Creative Slot stack cannot be combined
     on the Cursor stack.
   - Supports deletion sound when one item is placed in a Creative Slot
-    from the Cursor stack with Right Mouse Click.
+    from the Cursor stack with Right Mouse Button.
   - Supports deletion sound when the stack is thrown and not popped as an item.
 
 ### 👷 Technical
@@ -349,7 +370,7 @@
   - Swap-with-Offhand action (default <kbd>F</kbd> key).
   - Swap-with-HotBar action (default <kbd>1</kbd>-<kbd>9</kbd> key).
   - Drop sound from HotBar (default <kbd>Q</kbd> key).
-  - Pick item sound (default Mouse Wheel Click).
+  - Pick item sound (default Mouse Middle Button).
 * Changes Stick sound.
 * Supports some item sounds:
   - Disc Fragment
@@ -378,7 +399,7 @@
 
 * The sound is played regardless of whether the action succeeds or fails.
   - e.g.) When both Chest and PlayerInventory are full and trying to move the stack with
-    <kbd>Shift</kbd> + Click. The stack will not be moved, but the sound will be played.
+    <kbd>Shift</kbd> + LMB. The stack will not be moved, but the sound will be played.
   - e.g.2) Trying to place an item in a slot that doesn’t accept it, such as
     placing in the Result slot on the Crafting, Furnace, Brewing screen, and so on.
 
