@@ -28,12 +28,12 @@ public abstract class TextFieldWidgetMixin implements TextField {
     }
 
     @Inject(method = "erase", at = @At("RETURN"), remap = false)
-    private void extrasounds$eraseStrReturn(int offset, CallbackInfo ci) {
+    private void extrasounds$eraseStrReturn(CallbackInfo ci) {
         this.soundHandler.setCursor(this.cursorPos);
     }
 
     @Inject(method = "charTyped", at = @At("RETURN"))
-    private void extrasounds$appendChar(char chr, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+    private void extrasounds$appendChar(CallbackInfoReturnable<Boolean> cir) {
         if (!cir.getReturnValue() || !this.soundHandler.isPosUpdated(this.cursorPos, this.cursorPos)) {
             return;
         }
@@ -81,12 +81,12 @@ public abstract class TextFieldWidgetMixin implements TextField {
                     @At(value = "INVOKE", target = "Lme/shedaniel/rei/impl/client/gui/widget/basewidgets/TextFieldWidget;moveCursorToEnd()V", shift = At.Shift.AFTER)
             }
     )
-    private void extrasounds$cursorMoveKeyTyped(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+    private void extrasounds$cursorMoveKeyTyped(CallbackInfoReturnable<Boolean> cir) {
         this.soundHandler.onCursorChanged(this.cursorPos, this.cursorPos);
     }
 
-    @Inject(method = "mouseClicked", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/impl/client/gui/widget/basewidgets/TextFieldWidget;moveCursorTo(I)V", shift = At.Shift.AFTER))
-    private void extrasounds$clickEvent(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = {"mouseClicked", "method_25402"}, at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/impl/client/gui/widget/basewidgets/TextFieldWidget;moveCursorTo(I)V", shift = At.Shift.AFTER), require = 1)
+    private void extrasounds$clickEvent(CallbackInfoReturnable<Boolean> cir) {
         this.soundHandler.onCursorChanged(this.cursorPos, this.cursorPos);
     }
 }
