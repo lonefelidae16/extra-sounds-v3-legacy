@@ -25,7 +25,7 @@ public final class VanillaGenerator extends BaseVanillaGenerator {
                 final Block block = blockItem.getBlock();
                 final Identifier blockSoundId = block.getDefaultState().getSoundGroup().getPlaceSound().id();
                 if (block instanceof PillarBlock pillarBlock && pillarBlock.getDefaultState().getSoundGroup().equals(BlockSoundGroup.FROGLIGHT)) {
-                    return SoundDefinition.of(event(blockSoundId, 0.3f));
+                    return SoundDefinition.of(event(blockSoundId, 0.6f));
                 }
                 return this.generateFromBlock(block);
             } else if (item.getComponents().contains(DataComponentTypes.REPAIRABLE)) {
@@ -33,13 +33,13 @@ public final class VanillaGenerator extends BaseVanillaGenerator {
             } else if (this.isPotionItem(item)) {
                 return SoundDefinition.of(aliased(POTION));
             } else if (item instanceof GoatHornItem) {
-                return SoundDefinition.of(single(LOOSE_METAL.getId(), 0.6f, 0.9f, Sound.RegistrationType.SOUND_EVENT));
+                return SoundDefinition.of(single(LOOSE_METAL.getId(), 0.8f, 0.9f, Sound.RegistrationType.SOUND_EVENT));
             } else if (item instanceof SmithingTemplateItem) {
                 return SoundDefinition.of(aliased(LOOSE_METAL));
             } else if (item instanceof DiscFragmentItem) {
-                return SoundDefinition.of(single(METAL_BITS.getId(), 0.7f, 0.85f, Sound.RegistrationType.SOUND_EVENT));
+                return SoundDefinition.of(single(METAL_BITS.getId(), 0.9f, 0.85f, Sound.RegistrationType.SOUND_EVENT));
             } else if (item instanceof BucketItem bucketItem) {
-                final SoundEntry soundEntry = bucketItem.fluid.getBucketFillSound().map(sound -> event(sound.id(), 0.4f)).orElse(aliased(METAL));
+                final SoundEntry soundEntry = bucketItem.fluid.getBucketFillSound().map(sound -> event(sound.id(), 0.7f)).orElse(aliased(METAL));
                 return SoundDefinition.of(soundEntry);
             }
 

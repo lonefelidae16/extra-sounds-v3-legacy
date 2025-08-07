@@ -79,16 +79,16 @@ public abstract class BaseVanillaGenerator {
         } else if (block instanceof BannerBlock) {
             return SoundDefinition.of(aliased(BANNER));
         } else if (block instanceof SeaPickleBlock) {
-            return SoundDefinition.of(event(blockSoundId, 0.4f));
+            return SoundDefinition.of(event(blockSoundId, 0.7f));
         } else if (block instanceof LeavesBlock || block instanceof PlantBlock || block instanceof SugarCaneBlock) {
             if (blockSoundId.getPath().equals("block.grass.place")) {
                 return SoundDefinition.of(aliased(LEAVES));
             } else {
-                return SoundDefinition.of(event(blockSoundId));
+                return SoundDefinition.of(event(blockSoundId, 1.3f));
             }
         }
 
-        return SoundDefinition.of(event(blockSoundId));
+        return SoundDefinition.of(event(blockSoundId, 1.3f));
     }
 
     protected SoundDefinition generalSounds(Item item) {

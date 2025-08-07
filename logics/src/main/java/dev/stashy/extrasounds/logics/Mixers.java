@@ -4,7 +4,7 @@ import dev.stashy.soundcategories.CategoryLoader;
 import net.minecraft.sound.SoundCategory;
 
 public final class Mixers implements CategoryLoader {
-    @Register(master = true, defaultLevel = 0.5f)
+    @Register(master = true, defaultLevel = 0.33f)
     public static SoundCategory MASTER;
     @Register
     public static SoundCategory INVENTORY;

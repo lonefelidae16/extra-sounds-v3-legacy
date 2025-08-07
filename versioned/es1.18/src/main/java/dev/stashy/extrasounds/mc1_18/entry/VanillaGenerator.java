@@ -29,7 +29,7 @@ public final class VanillaGenerator extends BaseVanillaGenerator {
             } else if (this.isPotionItem(item)) {
                 return SoundDefinition.of(aliased(POTION));
             } else if (item instanceof BucketItem bucketItem) {
-                final SoundEntry soundEntry = bucketItem.fluid.getBucketFillSound().map(sound -> event(sound.getId(), 0.4f)).orElse(aliased(METAL));
+                final SoundEntry soundEntry = bucketItem.fluid.getBucketFillSound().map(sound -> event(sound.getId(), 0.7f)).orElse(aliased(METAL));
                 return SoundDefinition.of(soundEntry);
             }
 
