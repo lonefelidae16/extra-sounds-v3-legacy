@@ -3,13 +3,15 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-name: Build project
+name: Build and Release
 on:
   push:
     branches:
       - dev
       - 'port/**'
       - 'workflow/**'
+    tags:
+      - 'v3/**'
   pull_request:
 
 jobs:
@@ -57,3 +59,11 @@ jobs:
         with:
           name: "extrasounds-dev+${{env.SHORT_SHA}}"
           path: build/libs/
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/libs/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
