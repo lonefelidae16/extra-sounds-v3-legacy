@@ -4,6 +4,8 @@ plugins {
 
 var extraSounds = project.parent
 
+version = "${extraSounds.mod_version}+${versionDetails().gitHash[0..7]}~lonefelidae16"
+
 base {
     archivesName = "${extraSounds.archives_base_name}-base"
 }
