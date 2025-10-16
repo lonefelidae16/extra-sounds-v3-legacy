@@ -36,8 +36,6 @@ and works with the following Minecraft versions:
 * Minecraft 1.21 family
   - 1.21 - 1.21.8
 
-If the version you want isn’t available, [you can request a new backward compatibility](https://github.com/lonefelidae16/extra-sounds/issues/new?assignees=&labels=backward,enhancement&projects=&template=backward.yml).
-
 When you find a bug or compatibility problem, [you can raise an issue](https://github.com/lonefelidae16/extra-sounds/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml).
 
 ## ♬ Features
