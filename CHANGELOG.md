@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.0.0+1.21.10-build.1] - 2025-11-30
+### ✨ Added
+
+* Supports 1.21.9 - 1.21.10.
+* Supports sound preview functionality on Sound settings screen when not in game
+  for MC1.21.9 or later.
+* New sounds:
+  - Copper items, equipments.
+
+### 👷 Technical
+
+* Some files were refactored.
+* Dependency updates:
+    - yarn mappings 1.21.10+build.1
+    - fabric api 0.135.0+1.21.10
+    - fabric loader 0.17.2
+    - SoundCategories
+    - Gradle 9.2.0
+
 ## [3.0.0+1.21.8-build.7] - 2025-10-20
 ### 🔧 Fixed
 
@@ -9,6 +28,8 @@
 ### 👷 Technical
 
 * Some files were refactored.
+* Dependency updates:
+  - SoundCategories
 
 ## [3.0.0+1.21.8-build.6] - 2025-09-07
 ### 🔧 Fixed
