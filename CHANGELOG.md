@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0+1.21.11-build.1] - 2026-01-19
+### ✨ Added
+
+* Supports 1.21.11.
+* New sounds:
+  - Nautilus Armor
+  - Netherite Horse Armor
+
+### 👷 Technical
+
+* Some files were refactored.
+* Dependency updates:
+  - yarn mappings 1.21.11+build.4
+  - fabric api 0.141.1+1.21.11
+  - fabric loader 0.18.4
+  - SoundCategories
+  - Gradle 9.2.1
+
 ## [3.0.0+1.21.10-build.1] - 2025-11-30
 ### ✨ Added
 

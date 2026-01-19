@@ -34,7 +34,7 @@ and works with the following Minecraft versions:
 * Minecraft 1.20 family
   - 1.20 - 1.20.6
 * Minecraft 1.21 family
-  - 1.21 - 1.21.10
+  - 1.21 - 1.21.11
 
 When you find a bug or compatibility problem, [you can raise an issue](https://github.com/lonefelidae16/extra-sounds/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml).
 
