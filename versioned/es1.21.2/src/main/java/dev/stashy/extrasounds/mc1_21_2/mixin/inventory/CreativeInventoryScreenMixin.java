@@ -53,7 +53,7 @@ public abstract class CreativeInventoryScreenMixin extends HandledScreen<Creativ
 
         @Override
         protected Slot getDeleteItemSlot() {
-            return deleteItemSlot;
+            return CreativeInventoryScreenMixin.this.deleteItemSlot;
         }
     };
 

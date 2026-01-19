@@ -9,12 +9,8 @@ plugins {
 
 var targetJavaLang = Integer.parseInt(project.java_lang_version)
 
-tasks.named('runClient').with {
-    if (isPresent()) {
-        configure {
-            dependsOn(build)
-        }
-    }
+tasks.named('runClient').configure {
+    dependsOn(build)
 }
 
 var verStr = (project.findProperty('verStr') ?: versionDetails().gitHash[0..7]).toString()

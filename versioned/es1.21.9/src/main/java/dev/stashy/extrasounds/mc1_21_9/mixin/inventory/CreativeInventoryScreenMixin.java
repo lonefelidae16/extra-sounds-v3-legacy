@@ -100,7 +100,11 @@ public abstract class CreativeInventoryScreenMixin extends HandledScreen<Creativ
         this.screenScrollHandler.onScroll(this.getScreenHandler().getRow(this.scrollPosition));
     }
 
-    @Inject(method = "resize", at = @At(value = "INVOKE", target = METHOD_SIGN_SCROLL_ITEMS))
+    @Inject(method = {
+            "method_25410(Lnet/minecraft/class_310;II)V",  // void resize(MinecraftClient, int, int)
+            "resize(II)V"
+//            "method_25410(II)V"    // void resize(int, int)
+    }, at = @At(value = "INVOKE", target = METHOD_SIGN_SCROLL_ITEMS), require = 1)
     private void extrasounds$creativeScreenScrollOnResize(CallbackInfo ci) {
         this.screenScrollHandler.onScroll(this.getScreenHandler().getRow(this.scrollPosition));
     }

@@ -54,7 +54,7 @@ public abstract class CreativeInventoryScreenMixin extends AbstractInventoryScre
 
         @Override
         protected Slot getDeleteItemSlot() {
-            return deleteItemSlot;
+            return CreativeInventoryScreenMixin.this.deleteItemSlot;
         }
     };
 
