@@ -1,0 +1,14 @@
+{
+  "soundCategory.extrasounds_logics$master": "ExtraSounds",
+  "soundCategory.extrasounds_logics$inventory": "Inventaire",
+  "soundCategory.extrasounds_logics$hotbar": "Barre d’action",
+  "soundCategory.extrasounds_logics$chat": "Messages du tchat",
+  "soundCategory.extrasounds_logics$chat_mention": "Mention dans le tchat",
+  "soundCategory.extrasounds_logics$screenshot": "Capture d’écran",
+  "soundCategory.extrasounds_logics$effects": "Effets / Potions",
+  "soundCategory.extrasounds_logics$typing": "Saisie au clavier",
+  "soundCategory.extrasounds_logics$item_intr": "Interactions avec les objets",
+  "soundCategory.extrasounds_logics$block_intr": "Interactions avec les blocs",
+  "soundCategory.extrasounds_logics$entity": "Événements d’entités",
+  "soundCategory.extrasounds_logics$item_drop": "Jet d’objet"
+}
