@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "soundcategories",
+  "version": "${version}",
+  "name": "Sound Categories",
+  "description": "Allows mods to define custom sound categories.",
+  "authors": [
+    "stashymane",
+    "lonefelidae16"
+  ],
+  "contact": {
+    "homepage": "${mod_page}",
+    "sources": "${mod_sources}"
+  },
+  "license": "${mod_license}",
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "dev.stashy.soundcategories.SoundCategoriesBootstrap"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": ">=${mod_support_lowest_mc}",
+    "fabric": "*",
+    "soundcategories-shared": "*"
+  }
+}

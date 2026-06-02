@@ -1,0 +1,162 @@
+import com.google.gson.JsonArray
+import com.google.gson.JsonParser
+import com.google.gson.JsonPrimitive
+
+plugins {
+    id "fabric-loom"
+    id "maven-publish"
+    id 'com.palantir.git-version'
+}
+
+var targetJavaLang = Integer.parseInt(rootProject.java_lang_version)
+
+var verStr = (project.findProperty('verStr') ?: versionDetails().gitHash[0..7]).toString()
+var buildNum = ''
+if (verStr.contains('-')) {
+    var spl = verStr.split('-')
+    verStr = spl[0]
+    buildNum = "-${spl[1]}"
+}
+version = "${project.mod_version}+${verStr}~lonefelidae16${buildNum}"
+
+allprojects {
+    group = project.maven_group
+
+    repositories {
+//        maven {
+//            name = "stashymane's repo"
+//            url = "https://repo.stashy.dev"
+//        }
+        maven {
+            url = "https://artifactory.kow08absty.com/artifactory/fabricmc"
+        }
+    }
+}
+
+base {
+    archivesName = project.archives_base_name
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    java {
+        withSourcesJar()
+        sourceCompatibility = JavaVersion.toVersion(targetJavaLang)
+        targetCompatibility = JavaVersion.toVersion(targetJavaLang)
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = "UTF-8"
+        it.options.release.set(targetJavaLang)
+    }
+
+    project.ext['moduleId'] = 'unnamed'
+    project.ext['moduleName'] = ''
+    project.ext['mod_license'] = project.mod_license
+    project.ext['moduleMixins'] = []
+    project.ext['moduleAccessWidener'] = ''
+
+    tasks.withType(ProcessResources).configureEach {
+        doFirst {
+            var props = [
+                    "mod_page",
+                    "mod_sources",
+//                    "mod_issues",
+                    "mod_support_lowest_mc"
+            ].collectEntries {
+                [it, project.properties[it]]
+            }
+
+            var mixins = new JsonArray()
+            project.ext['moduleMixins'].forEach {
+                mixins.add(it)
+            }
+
+            props.putAll([
+                    'moduleId'    : project.ext['moduleId'],
+                    'moduleName'  : project.ext['moduleName'],
+                    'mod_license' : project.ext['mod_license'],
+                    'moduleMixins': mixins.toString(),
+                    'version'     : project.version
+            ])
+
+            filesMatching("fabric.mod.json") {
+                expand props
+            }
+        }
+
+        doLast {
+            fileTree(dir: outputs.files.asPath, include: "**/fabric.mod.json").each { file ->
+                var fabricModJson = JsonParser.parseString(file.text).asJsonObject
+                if (!project.ext['moduleAccessWidener'].isEmpty()) {
+                    fabricModJson.add("accessWidener", new JsonPrimitive(project.ext['moduleAccessWidener']))
+                    file.text = fabricModJson.toString()
+                }
+            }
+        }
+    }
+}
+
+var devLibsPaths = '**/build/devlibs/*-dev.jar'
+var sourcesPaths = '**/*-sources.jar'
+
+dependencies {
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings "net.fabricmc:yarn:${rootProject.minecraft_version}${rootProject.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+
+    implementation include("me.lonefelidae16:groominglib:${rootProject.groom_version}")
+
+    compileOnly include(project(path: 'shared'))
+    // 1.21 family
+    compileOnly include(project(path: 'versioned:sc1.21.11'))
+    compileOnly include(project(path: 'versioned:sc1.21.9'))
+    compileOnly include(project(path: 'versioned:sc1.21'))
+    // 1.20 family
+    compileOnly include(project(path: 'versioned:sc1.20.5'))
+    compileOnly include(project(path: 'versioned:sc1.20.3'))
+    compileOnly include(project(path: 'versioned:sc1.20.2'))
+    compileOnly include(project(path: 'versioned:sc1.20'))
+    // 1.19 family
+    compileOnly include(project(path: 'versioned:sc1.19.4'))
+    compileOnly include(project(path: 'versioned:sc1.19.3'))
+    compileOnly include(project(path: 'versioned:sc1.19'))
+    // 1.18 family
+    compileOnly include(project(path: 'versioned:sc1.18'))
+
+    // DevLaunch
+    runtimeOnly fileTree(dir: 'shared', exclude: [sourcesPaths], include: [devLibsPaths])
+    runtimeOnly fileTree(dir: 'versioned', exclude: [sourcesPaths], include: [devLibsPaths])
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact(remapJar) {
+                builtBy remapJar
+            }
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = "https://repo.stashy.dev"
+            credentials {
+                username = project.hasProperty("publish_username") ? project.publish_username : ""
+                password = project.hasProperty("publish_password") ? project.publish_password : ""
+            }
+        }
+    }
+}
