@@ -1,10 +1,10 @@
 package dev.stashy.extrasounds.logics.impl;
 
 import dev.stashy.extrasounds.logics.ExtraSounds;
+import dev.stashy.extrasounds.logics.runtime.VersionedText;
 import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 
 import java.util.Objects;
 
