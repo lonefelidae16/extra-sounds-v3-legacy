@@ -13,7 +13,7 @@ public final class ChatSoundHandler {
 
     public void onMessage(PlayerEntity player, String text) {
         boolean containsPlName = false;
-        boolean containsScreenshot = text.matches(Text.translatable("screenshot.success", ".+?").getString());
+        boolean containsScreenshot = text.matches(VersionedText.INSTANCE.translatable("screenshot.success", ".+?").getString());
         try {
             containsPlName |= text.contains("@" + player.getName().getString());
             containsPlName |= text.contains("@" + Objects.requireNonNull(player.getDisplayName()).getString());
@@ -29,7 +29,7 @@ public final class ChatSoundHandler {
 
     public void onScroll(int line) {
         if (line != this.currentLines) {
-            ExtraSounds.MANAGER.playSound2D(Sounds.INVENTORY_SCROLL, SoundType.CHAT);
+            ExtraSounds.MANAGER.playSound2D(Sounds.SCREEN_SCROLL, SoundType.CHAT);
             this.currentLines = line;
         }
     }
