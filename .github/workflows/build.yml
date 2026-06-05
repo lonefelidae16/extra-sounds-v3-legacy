@@ -7,18 +7,18 @@ name: Build and Release
 on:
   push:
     branches:
-      - dev
+      - main
       - 'port/**'
       - 'workflow/**'
     tags:
-      - 'v3/**'
+      - 'v3-legacy/**'
   pull_request:
 
 jobs:
   build:
     strategy:
       matrix:
-        java: [ 21 ]
+        java: [ 25 ]
         os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
@@ -64,7 +64,7 @@ jobs:
         if: ${{ runner.os == 'Linux' }} # Only upload artifacts built from LTS java on one OS
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
-          name: "extrasounds-dev+${{env.SHORT_SHA}}"
+          name: "extrasounds-v3-legacy-dev+${{env.SHORT_SHA}}"
           path: build/libs/
 
       - name: Create GitHub Release
