@@ -5,6 +5,7 @@ import dev.stashy.soundcategories.shared.SoundCategories;
 import dev.stashy.soundcategories.shared.gui.widget.VersionedElementListWrapper;
 import me.lonefelidae16.groominglib.Util;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.Selectable;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.ElementListWidget;
@@ -19,7 +20,7 @@ import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Objects;
 
-public class SoundList extends ElementListWidget<VersionedElementListWrapper.DefaultedSoundEntry> implements VersionedElementListWrapper {
+public class SoundList extends ElementListWidget<VersionedElementListWrapper.DefaultedSoundEntry> implements VersionedElementListWrapper, Selectable {
     private static final EnumMap<SoundCategory, SimpleOption<Double>> VOLUME_OPTS = Util.make(new EnumMap<>(SoundCategory.class), map -> {
         for (SoundCategory cat : SoundCategory.values()) {
             final SimpleOption.TooltipFactoryGetter<Double> getter;
