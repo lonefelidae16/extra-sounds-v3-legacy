@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.0.0-legacy+1.21.11+1.16.5-build.1] - 2026-06-06
+### ✨ Added
+
+* Start v3 Legacy project.
+* Supports 1.16.5.
+* Supports 1.17.x.
+
+### 🗘 Updated
+
+* Some sounds are integrated into ExtraSounds’ assets.
+
+### 👷 Technical
+
+* Huge refactoring has been performed:
+  - Migration to Java 8.
+  - Add versioned package: 1.16.5, 1.17, 1.17.1.
+  - Use reflection to handle classes that extend `java.lang.Record`.
+* SoundCategories project has been included as a file tree.
+* Dependency updates:
+  - fabric loader 0.19.2
+  - fabric loom 1.16
+  - com.palantir.git-version 5.0.0
+  - Gradle 9.5.0
+
 ## [3.0.0+1.21.11-build.1] - 2026-01-19
 ### ✨ Added
 
