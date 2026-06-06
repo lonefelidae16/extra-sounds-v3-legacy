@@ -65,8 +65,8 @@ When you find a bug or compatibility problem, [you can raise an issue](https://g
   - Redstone Ores
   - Armor stand
 * Mod integrations
-  - [RoughlyEnoughItems](https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items)
-  - [MidnightControls](https://www.curseforge.com/minecraft/mc-mods/midnightcontrols)
+  - [RoughlyEnoughItems](https://modrinth.com/mod/rei)
+  - [MidnightControls](https://modrinth.com/mod/midnightcontrols)
 * [Mod API for developers](https://github.com/lonefelidae16/extra-sounds/wiki/Custom-sounds-for-mod-developers)
 * [Every sound is configurable/registerable via resource packs](https://github.com/lonefelidae16/extra-sounds/wiki/Custom-sounds-for-resource-pack-creators)
 
