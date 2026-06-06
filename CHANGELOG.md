@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0-legacy+1.21.11+1.16.5-build.2] - 2026-06-06
+### 🔧 Fixed
+
+* Crash on startup with RoughtlyEnoughItems:
+  - Minecraft 1.16.5
+  - REI 5.12.385
+
 ## [3.0.0-legacy+1.21.11+1.16.5-build.1] - 2026-06-06
 ### ✨ Added
 
