@@ -24,7 +24,7 @@ Sign in to GitHub to get it.
 Works with the following Minecraft versions:
 
 * Minecraft 1.16 family
-  - 1.16.5
+  - 1.16.1 - 1.16.5
 * Minecraft 1.17 family
   - 1.17 - 1.17.1
 * Minecraft 1.18 family

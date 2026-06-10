@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0-legacy+1.21.11+1.16.1-build.1] - 2026-06-10
+### ✨ Added
+
+* Supports 1.16.1 - 1.16.4.
+
+### 🗘 Updated
+
+* Chain Armor sound
+* Adjust volumes
+
 ## [3.0.0-legacy+1.21.11+1.16.5-build.2] - 2026-06-06
 ### 🔧 Fixed
 
