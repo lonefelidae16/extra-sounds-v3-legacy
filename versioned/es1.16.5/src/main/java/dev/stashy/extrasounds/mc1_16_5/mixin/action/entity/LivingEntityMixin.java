@@ -20,7 +20,7 @@ public abstract class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
-    @Inject(method = "onDeath", at = @At("HEAD"))
+    @Inject(method = "updatePostDeath", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;remove()V"))
     private void extrasounds$poofSound(CallbackInfo ci) {
         if (!this.world.isClient) {
             return;
