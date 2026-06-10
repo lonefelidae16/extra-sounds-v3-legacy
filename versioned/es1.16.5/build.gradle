@@ -1,7 +1,4 @@
-import org.gradle.api.artifacts.transform.TransformAction
-import org.gradle.api.artifacts.transform.TransformParameters
-import org.gradle.api.artifacts.transform.TransformOutputs
-import org.gradle.api.artifacts.transform.InputArtifact
+import org.gradle.api.artifacts.transform.*
 
 import java.util.zip.ZipFile
 
