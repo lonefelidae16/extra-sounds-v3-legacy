@@ -22,7 +22,7 @@ public class TextImpl extends VersionedText {
     }
 
     @Override
-    public Text translatable(String key) {
-        return new TranslatableText(key);
+    public Text translatable(String key, Object... args) {
+        return new TranslatableText(key, args);
     }
 }
